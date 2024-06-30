@@ -1,0 +1,2 @@
+lambda packet: UDP in packet and packet[UDP].dport == 53
+lambda packet: TCP in packet and packet[TCP].sport == 80

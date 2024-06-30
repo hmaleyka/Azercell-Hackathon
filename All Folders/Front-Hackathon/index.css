@@ -1,0 +1,47 @@
+#alertid{
+    font-style: normal;
+}
+.container{  
+    display: flex;
+    justify-content: space-between; /* Aligns horizontally center */
+}
+/* styles.css file */
+.container {
+    display: flex;           /* Activates flexbox */
+    justify-content: space-between; /* Distributes space between the divs */
+}
+
+.box {
+    width: 30%;              /* Each box takes up 30% of the container width */
+    padding: 20px;           /* Adds space inside the boxes */
+    background-color: lightblue; /* Adds a background color for visibility */
+    text-align: center;      /* Centers the text horizontally */
+}
+
+.profile .profile-overview .card-title {
+    color: #012970;
+  }
+
+  .dashboard .filter {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+  }
+
+
+
+#myPieChart {
+    width: 300px !important; 
+    height: 200px !important; 
+}
+
+.chart-container {
+    width: 300px;
+    height: 300px;
+}
+
+#myLineChart {
+    width: 300px !important; /* Use !important to override inline styles if necessary */
+    height: 300px !important;
+}
+

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trasport Topology</title>
+    <link href="./index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+
+  <body style="background-color:#530C4F">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid"  style="background-color: #821787; height: 97px;">
+          <a class="navbar-brand" href="#" style="color: white; font-family: sans-serif;">Dashboard</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <div class="input-group mb-3" style="margin-left: 400px; margin-top: 20px">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Pcap File</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default " id="pcapFile">
+                </div>
+                <div class="input-group mb-3" style="margin-left: 400px;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Rule File</span>
+                     
+                  </div>
+                  
+                  <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="ruleFile">
+                </div>
+               
+               
+              </li>
+              <a class="btn btn-danger" style="width:100px; height: 50px; margin-left: 500px; margin-top: 20px;">Check</a> 
+              <!-- <li class="nav-item">
+                <a class="nav-link active"  aria-current="page" href="#" style="color: white; font-family: sans-serif; margin-left: 500px; ">ZEEK RULES</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      
+    <div style="justify-content: space-between; display: block;">
+        <div class="row">
+            <div class="col-sm-3"  >
+              <div class="card" style="background-color: #920063; margin-left: 20px; margin-top: 20px; margin-bottom: 20px;  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; " >
+                <div class="card-body">
+                  <h1 class="card-title" style=" font-family:'Roboto', font-serif; color: white;">Graphic</h1>
+                  <div class="chart-container">
+                    <canvas id="myPieChart" style="width: 300px; height: 100px; "></canvas>
+                  </div>
+                   
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="background-color: #920063; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;" >
+                    <div class="card-body">
+                      <h1 class="card-title" style="height: 200px; font-family:'Roboto', font-serif; color: white;">Total Logs Count</h1>
+                                    
+                      <h3 style="color:white">Total Logs count: 2789</h3>
+                      <p class="card-text">
+                        
+                        <!-- <p id="logCountDisplay" style="color:white;  font-size: 50px;"></p>    -->
+                       
+                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="background-color: #920063; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;" >
+                    <div class="card-body">
+                      <h1 class="card-title" style="height: 200px; font-family:'Roboto', font-serif; color: white;">Connection Lost</h1>
+                      <h3 style="color:white"> The count of connection lost: </h3>
+                      
+                      <!-- <p id="connectionLosses" style="color:white;  font-size: 50px;">Connection Losses: Loading... <a class="btn btn-warning" href="http://127.0.0.1:5000/api/connection_losses"> See the count</a></p>           -->
+                      <!-- <div class="chart-container">
+                        <canvas id="myConnectionChart" style="width: 300px; "></canvas>
+                        
+                      </div> -->
+                       
+                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                  </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card" style="background-color: #920063; margin-left: 20px; margin-top: 20px; margin-bottom: 20px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;" >
+                    <div class="card-body">
+                      <h1 class="card-title" style=" font-family:'Roboto',  font-serif; color: white; height: 85px;">Alerts</h1>
+                      <!-- <h3 style="color:white"></h3> -->
+                      
+                    <pre id="resultsDisplay"></pre>
+                    <h3 style="color:white">Alerts: 3 alerts are detected</h3>
+                      <div class="chart-container">
+                        <canvas id="piechart" style="width: 300px; height: 100px; "></canvas>
+                      </div>
+                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+        <div class="row" style="width: 100%;">
+            <div class="col-sm-6">
+                <div class="card" style="background-color: #920063; margin: 20px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                    <div class="card-body" style="padding: 20px;">
+                        <h1 class="card-title" style=" font-family: font-serif; color: white;">Map</h1>
+                          <img src="azemap.png" style="width: 850px;">                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card" style="background-color: #920063; margin: 20px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                    <div class="card-body" style="padding: 20px;" >
+                        <h1 class="card-title" style="min-height: 200px; font-family: font-serif; color: white;" >Connection between end-points in network layers</h1>
+                        <!-- <img src="./map.jpg" alt="" style="display: block; width: 10%; height: auto;"> -->
+                        <a class="btn btn-warning" href="./endpoint.jpeg" style="width: 400px; height: 50px; font-family: font-serif; color: red;">See the picture of Endpoints</a>
+                        <a href="login.html" class="btn btn-warning" style="color: red; width: 300px; height: 50px;">Login the Panel</a>
+                       
+                        <div id="result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <div style="justify-content: space-between; display: block;">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card" style="background-color: #920063; margin-left:20px; margin-top: 20px; margin-bottom: 20px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                <div class="card-body">
+                    <h1 class="card-title" style=" font-family: font-serif; color: white; ">Detected Anomalies Behaviour</h1>
+                    <div class="chart-container" style="background-color: white;">
+                        <canvas id="myLineChart" style="width: 300px; "></canvas>
+                    </div>
+                </div>
+             </div>
+            </div>
+         <div class="col-sm-6">
+            <div class="card" style="background-color: #920063; margin-left:20px; margin-top: 20px; margin-bottom: 20px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                <div class="card-body" >
+                    <h1 class="card-title" style=" font-family: font-serif; color: white;">Line graph vol2</h1>
+                    <div class="chart-container" style="background-color: white;">
+                      <canvas id="myGraphChart" style="width: 300px; "></canvas>
+                  </div>
+                </div>
+             </div>
+         </div>
+        </div>
+   </div> 
+  
+     
+<script src="piechart.js"></script>
+<script src="linegraph.js"></script>
+<script src="graph1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
